@@ -1,11 +1,27 @@
-import { oak } from './deps.ts';
-import Router from './routes/mod.ts';
-// Oak Imports
-const { Application } = oak ;
-
+import { Application } from './deps.ts';
+import { TodoRouter, MainRouter } from './routes/mod.ts'
 const server = new Application();
 
-server.use(Router.routes())
 
+
+//Routes
+server.use((ctx, next) => {
+    console.log(ctx.request.url)
+    next()
+
+})
+
+server.use(MainRouter.routes())
+server.use(TodoRouter.routes())
+
+//server.use(MainRouter.allowedMethods())
+
+//server.use(TodoRouter.allowedMethods())
+
+
+
+
+//
+console.log('Server Created')
 await server.listen({port : 3000})
 
