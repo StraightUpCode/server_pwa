@@ -17,11 +17,6 @@ server.use(TodoRouter.routes())
 //server.use(MainRouter.allowedMethods())
 
 //server.use(TodoRouter.allowedMethods())
-
-
-
-
-//
 console.log('Server Created')
 await server.listen({port : 3000})
 
