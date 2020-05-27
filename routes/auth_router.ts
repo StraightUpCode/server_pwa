@@ -1,11 +1,11 @@
-import  { Router } from '../deps.ts'
+import { Router } from "../deps.ts";
 
 const AuthRouter = new Router({
-    prefix: '/'
-}); 
+  prefix: "/",
+});
 
-AuthRouter.get('/login' , async (ctx) => {
-    ctx.response.body = "Hello world"
-} )
+AuthRouter.get("/login", async (ctx) => {
+  ctx.response.body = "Hello world";
+});
 
 export default AuthRouter;

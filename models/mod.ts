@@ -1,35 +1,29 @@
-import { Database } from '../deps.ts';
-import { DB_HOST,
-    DB_NAME, 
-    DB_PASS,
-    DB_USER } from '../enviroment.ts'
-    
-import TodoModel from './TodoModel.ts';
-import TodoStatus from './TodoStatus.ts'
-import User from './User.ts';
+import { Database } from "../deps.ts";
+import { DB_HOST, DB_NAME, DB_PASS, DB_USER } from "../enviroment.ts";
 
-console.log(DB_HOST,
-    DB_NAME, 
-    DB_PASS,
-    DB_USER )
+import TodoModel from "./TodoModel.ts";
+import TodoStatus from "./TodoStatus.ts";
+import User from "./User.ts";
 
-const db = new Database('postgres',{
-    host: DB_HOST,
-    database: DB_NAME,
-    username: DB_USER,
-    password: DB_PASS
-})
+console.log(DB_HOST, DB_NAME, DB_PASS, DB_USER);
 
-db.link([TodoModel])
-db.link([TodoStatus])
-db.link([User])
+const db = new Database("postgres", {
+  host: DB_HOST,
+  database: DB_NAME,
+  username: DB_USER,
+  password: DB_PASS,
+});
 
-await db.sync({drop: true}) 
-console.log('Awaiting Db Sync')
+db.link([TodoModel]);
+db.link([TodoStatus]);
+db.link([User]);
 
-export default db
+await db.sync({ drop: true });
+console.log("Awaiting Db Sync");
+
+export default db;
 export {
-    db,
-    TodoModel,
-    TodoStatus
-}
+  db,
+  TodoModel,
+  TodoStatus,
+};
