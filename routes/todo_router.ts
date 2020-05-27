@@ -10,7 +10,7 @@ TodoRouter.get('/' , async (ctx) => {
     ctx.response.body = await TodoModel.all();
 } )
 TodoRouter.get('/:id' , async (ctx) => {
-    console.log('api')
+    console.log('api2')
     ctx.response.body = `Hello ${ctx.request}`
 } )
 

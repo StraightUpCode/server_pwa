@@ -9,6 +9,7 @@ class TodoModel extends Model {
             primaryKey : true,
             autoIncrement: true
         },
+        local_id: DATA_TYPES.STRING,
         todo: DATA_TYPES.STRING,
         endDate : DATA_TYPES.DATETIME,
 
