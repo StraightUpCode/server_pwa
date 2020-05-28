@@ -1,5 +1,5 @@
 import { Application } from "./deps.ts";
-import { TodoRouter, MainRouter } from "./routes/mod.ts";
+import { TodoRouter, MainRouter, AuthRouter } from "./routes/mod.ts";
 const server = new Application();
 
 //Routes
@@ -10,6 +10,7 @@ server.use((ctx, next) => {
 
 server.use(MainRouter.routes());
 server.use(TodoRouter.routes());
+server.use(AuthRouter.routes());
 
 //server.use(MainRouter.allowedMethods())
 

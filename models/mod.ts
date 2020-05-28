@@ -18,7 +18,7 @@ db.link([TodoModel]);
 db.link([TodoStatus]);
 db.link([User]);
 
-await db.sync({ drop: true });
+//await db.sync();
 console.log("Awaiting Db Sync");
 
 export default db;

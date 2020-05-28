@@ -1,8 +1,22 @@
 import { DATA_TYPES, Model } from "../deps.ts";
 
-interface LoginResult {
+export interface LoginResult {
   matchingResult: boolean;
   result?: any;
+}
+
+export interface UserModel {
+  id: number;
+  username: string;
+  password: string;
+  email: string;
+  created_at?: Date;
+  updated_at?: Date;
+}
+
+export interface UserCredential {
+  username: string;
+  password: string;
 }
 
 class User extends Model {
@@ -17,7 +31,8 @@ class User extends Model {
     email: DATA_TYPES.STRING,
   };
 
-  static async logIn(username: string, password: string): Promise<LoginResult> {
+  static async logIn(UserCredential: UserCredential): Promise<LoginResult> {
+    const { username, password } = UserCredential;
     const user = await User.where({
       username,
       password,
