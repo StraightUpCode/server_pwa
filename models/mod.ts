@@ -14,11 +14,10 @@ const db = new Database("postgres", {
   password: DB_PASS,
 });
 
-db.link([TodoModel]);
-// db.link([TodoStatus]);
-// db.link([User]);
+db.link([TodoModel, TodoStatus, User]);
 
-await db.sync();
+
+await db.sync({drop: true});
 console.log("Awaiting Db Sync");
 
 export default db;

@@ -1,7 +1,7 @@
 import { DATA_TYPES, Model } from "../deps.ts";
 
 class TodoModel extends Model {
-  static table = "todo2";
+  static table = "todo";
   static fields = {
     id: {
       primaryKey: true,
@@ -12,9 +12,9 @@ class TodoModel extends Model {
     todo: DATA_TYPES.STRING,
     status: {
       type: DATA_TYPES.ENUM,
-      value: ['pendiente','realizado']
+      values: ['pendiente','realizado']
     },
-    end_date: DATA_TYPES.DATETIME,
+    end_date: DATA_TYPES.DATETIME
   };
 }
 
