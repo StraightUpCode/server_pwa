@@ -15,10 +15,10 @@ const db = new Database("postgres", {
 });
 
 db.link([TodoModel]);
-db.link([TodoStatus]);
-db.link([User]);
+// db.link([TodoStatus]);
+// db.link([User]);
 
-//await db.sync();
+await db.sync();
 console.log("Awaiting Db Sync");
 
 export default db;

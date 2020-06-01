@@ -2,7 +2,7 @@ import { DATA_TYPES, Model } from "../deps.ts";
 
 export interface LoginResult {
   matchingResult: boolean;
-  result?: any;
+  result?: UserModel;
 }
 
 export interface UserModel {
